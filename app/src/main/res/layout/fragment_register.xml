@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:whatever="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <TextView
+            android:text="New Person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp" />
+
+        <com.andreabaccega.widget.FormEditText
+            whatever:testType="alpha"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/editTextName"
+            android:hint="Name"
+            android:background="@color/gray_edittext_background"
+            android:layout_marginBottom="20dp" />
+
+
+        <com.andreabaccega.widget.FormEditText
+            whatever:testType="alpha"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/editTextInformation"
+            android:hint="Information"
+            android:background="@color/gray_edittext_background"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:text="Send"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/button"
+            android:layout_margin="20dp" />
+
+        <Button
+            android:text="All Records"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/button2"
+            android:layout_margin="20dp" />
+    </LinearLayout>
+</layout>

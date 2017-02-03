@@ -47,14 +47,12 @@ captures/
 .externalNativeBuild
 
 #.gitignore
-#.idea/
-
+.idea/
 #app/
 #build.gradle
 #gradle.properties
 #gradle/
 #gradlew
-#gradlew.bat
+gradlew.bat
 #settings.gradle
-
-#streethawkexample.iml
+streethawkexample.iml
