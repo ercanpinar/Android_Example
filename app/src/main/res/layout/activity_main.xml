@@ -8,10 +8,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.streethawk.example.MainActivity">
+    tools:context="com.streethawk.example.activity.MainActivity">
 
     <fragment
-        android:name="com.streethawk.example.RegisterFragment"
+        android:name="com.streethawk.example.fragment.RegisterFragment"
         android:id="@+id/register_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

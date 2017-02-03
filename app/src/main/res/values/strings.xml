@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Streethawkexample</string>
+    <string name="name_title">Name : </string>
+    <string name="email_title">E-mail : </string>
 </resources>

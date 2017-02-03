@@ -1,4 +1,4 @@
-package com.streethawk.example;
+package com.streethawk.example.fragment;
 
 import android.app.Fragment;
 import android.databinding.DataBindingUtil;
@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.streethawk.example.R;
 import com.streethawk.example.databinding.FragmentRegisterBinding;
 
 /**
@@ -24,7 +25,20 @@ public class RegisterFragment extends Fragment {
         fragmentRegisterBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_register, container, false);
 
+        fragmentRegisterBinding.buttonSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(fragmentRegisterBinding.formEditTextName.testValidity() && fragmentRegisterBinding.formEditTextEmail.testValidity())
+                    saveNewPerson();
+            }
+        });
 
         return fragmentRegisterBinding.getRoot();
+    }
+
+    private void saveNewPerson() {
+
+
+
     }
 }

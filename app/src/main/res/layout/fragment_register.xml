@@ -23,7 +23,7 @@
             whatever:testType="alpha"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/editTextName"
+            android:id="@+id/formEditTextName"
             android:hint="Name"
             android:background="@color/gray_edittext_background"
             android:layout_marginBottom="20dp" />
@@ -33,8 +33,8 @@
             whatever:testType="alpha"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/editTextInformation"
-            android:hint="Information"
+            android:id="@+id/formEditTextEmail"
+            android:hint="E-mail"
             android:background="@color/gray_edittext_background"
             android:layout_marginBottom="20dp" />
 
@@ -42,14 +42,14 @@
             android:text="Send"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/button"
+            android:id="@+id/buttonSend"
             android:layout_margin="20dp" />
 
         <Button
             android:text="All Records"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/button2"
+            android:id="@+id/buttonShowAllRecord"
             android:layout_margin="20dp" />
     </LinearLayout>
 </layout>

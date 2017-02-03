@@ -1,7 +1,9 @@
-package com.streethawk.example;
+package com.streethawk.example.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.streethawk.example.R;
 
 public class MainActivity extends AppCompatActivity {
 
