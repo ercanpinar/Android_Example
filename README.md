@@ -32,10 +32,16 @@ Implementation occurs on three screens
 
 This screen was created for the purpose of being checked during application opening and for promotional purposes.
 
+![SplashScreen.png](https://bitbucket.org/repo/4xpday/images/2450788905-SplashScreen.png)
+
+
 * **New Post Screen**
 
 On this screen, users fill in the required fields and send new posts. If the user enters incomplete information on this screen, warning messages are displayed according to the missing area.
 On this screen, the user can be directed to the "ALL POST" page.
+
+
+![NewPostScreen.png](https://bitbucket.org/repo/4xpday/images/896725399-NewPostScreen.png)
 
 * **All Post Screen**
 
