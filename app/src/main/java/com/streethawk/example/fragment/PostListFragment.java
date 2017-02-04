@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.streethawk.example.R;
 import com.streethawk.example.activity.MainActivity;
+import com.streethawk.example.adapter.PostArrayAdapter;
 import com.streethawk.example.databinding.FragmentPostListBinding;
 import com.streethawk.example.service.ServiceManager;
 import com.streethawk.example.service.listener.ResponseListener;
@@ -63,6 +64,8 @@ public class PostListFragment extends Fragment implements ResponseListener{
         if(response !=null){
             PostListResponse postListResponse = (PostListResponse) response;
 
+            PostArrayAdapter postArrayAdapter =  new PostArrayAdapter(mActivity,postListResponse.getPostList());
+            fragmentPostListBinding.listViewPostList.setAdapter(postArrayAdapter);
 
 
         }else{

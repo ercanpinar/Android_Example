@@ -6,5 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_post"
+        android:divider="@color/bg_post"
+        android:dividerHeight="2px"
         android:padding="10dp" />
 </layout>
