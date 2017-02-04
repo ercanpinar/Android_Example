@@ -47,6 +47,7 @@ On this screen, the user can be directed to the "ALL POST" page.
 
 On this screen, users see previously posted POSTs in a list.
 
+![posts.png](https://bitbucket.org/repo/4xpday/images/3453888552-posts.png)
 ### Error Tracking ###
 
 * When the user first visits the New Post Posting page, an internet status check is performed and an informing message is given if there is no connection.
@@ -67,7 +68,7 @@ It is warned that an error has occurred.
 
 ### Open Source Libraries  ###
 
-* **Crouton**
+* **[Crouton](https://github.com/keyboardsurfer/Crouton)**
 
 Used for Alert Messages
 
