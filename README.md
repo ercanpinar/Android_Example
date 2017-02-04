@@ -116,8 +116,30 @@ androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
 testCompile 'junit:junit:4.12'
 
 ### Application Demo Link ###
+
 [HockeyAppLink - Demo Version
 ](https://rink.hockeyapp.net/apps/e1b1aa793e7241488c2d586d8e4778f0/)
+
+### Web Services ###
+
+JSON service.
+
+[**https://jsonplaceholder.typicode.com/**](https://jsonplaceholder.typicode.com/)
+
+ * **Send New Post**  
+  
+   Request Type POST
+
+  ** https://jsonplaceholder.typicode.com/posts**
+
+ * **All Post** 
+
+   Request Type GET
+
+    ** https://jsonplaceholder.typicode.com/posts**
+
+
+
 ###  Android Interview Question  ### 
 Create a simple android app that will post some json data to https://jsonplaceholder.typicode.com/ fetch it and display list of all posted items.
 
