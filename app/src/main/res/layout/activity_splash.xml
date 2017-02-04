@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
+    android:orientation="vertical"
     android:gravity="center">
-
-   <!-- <com.wang.avi.AVLoadingIndicatorView
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:indicator="BallPulse"
-        app:indicator_color="@android:color/white"
-        />-->
+        android:text="@string/splash_text"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:layout_margin="50dp"
+        android:gravity="center"/>
 
 </LinearLayout>

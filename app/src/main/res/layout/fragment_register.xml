@@ -6,6 +6,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorAccent"
         android:gravity="center"
         android:padding="10dp">
 
@@ -24,20 +25,22 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/formEditTextName"
-            android:hint="Name"
+            android:hint="@string/hint_name"
             android:background="@color/gray_edittext_background"
             android:layout_marginBottom="20dp" />
-
 
         <com.andreabaccega.widget.FormEditText
-            whatever:testType="alpha"
+            whatever:testType="regexp"
+            whatever:customRegexp="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+            whatever:testErrorString="@string/error_emailnotvalid"
+            android:id="@+id/formEditTextEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/formEditTextEmail"
-            android:hint="E-mail"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
             android:background="@color/gray_edittext_background"
-            android:layout_marginBottom="20dp" />
-
+            android:layout_marginBottom="20dp"
+            />
         <Button
             android:text="Send"
             android:layout_width="match_parent"

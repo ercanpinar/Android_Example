@@ -1,0 +1,4 @@
+<set>
+    <translate xmlns:android="http://schemas.android.com/apk/res/android"
+               android:duration="1000"/>
+</set>
