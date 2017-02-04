@@ -1,8 +1,8 @@
 # Street Hawk Example Project #
 
-### Application Name  ###
+### Application Icon and Name  ###
 
-![ic_launcher.png](https://bitbucket.org/repo/4xpday/images/681013801-ic_launcher.png) SH Post
+![ic_launcher.png](https://bitbucket.org/repo/4xpday/images/681013801-ic_launcher.png) **SH Post**
 
 ### Application Version ###
 
@@ -24,18 +24,21 @@ Send a new post and was developed to display the post sent earlier.
 
 Implementation occurs on three screens
 
-* Splash
-* New Post
-* All Post
+* **Splash**
+* **New Post**
+* **All Post**
 
-* Splash Screen
+* **Splash Screen**
+
 This screen was created for the purpose of being checked during application opening and for promotional purposes.
 
-* New Post Screen
+* **New Post Screen**
+
 On this screen, users fill in the required fields and send new posts. If the user enters incomplete information on this screen, warning messages are displayed according to the missing area.
 On this screen, the user can be directed to the "ALL POST" page.
 
-* All Post Screen
+* **All Post Screen**
+
 On this screen, users see previously posted POSTs in a list.
 
 ### Error Tracking ###
