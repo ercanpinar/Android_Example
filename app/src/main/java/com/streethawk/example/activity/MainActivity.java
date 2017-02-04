@@ -2,7 +2,6 @@ package com.streethawk.example.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -10,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.streethawk.example.R;
 import com.streethawk.example.fragment.RegisterFragment;
-import com.streethawk.example.fragment.UserListFragment;
+import com.streethawk.example.util.Util;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void replaceFragment(Fragment fragment) {
+
+        Util.closeKeyboard(this);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();

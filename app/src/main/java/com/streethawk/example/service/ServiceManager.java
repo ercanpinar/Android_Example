@@ -1,63 +1,82 @@
 package com.streethawk.example.service;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.streethawk.example.R;
+import com.streethawk.example.service.listener.JsonObjectReturnListener;
+import com.streethawk.example.service.listener.ResponseListener;
+import com.streethawk.example.service.response.RegisterResponse;
+import com.streethawk.example.service.response.UserListResponse;
+import com.streethawk.example.util.Util;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import de.keyboardsurfer.android.widget.crouton.Style;
+
 /**
  * Created by ercanpinar on 03/02/2017.
  */
 
-public class ServiceManager {
+public class ServiceManager implements JsonObjectReturnListener{
 
-
-//    Util.internetConnectionCheck(getContext());
-
-
-    /*public static final String SERVICE_URL="http://sandbox.000.com";
-
-    public static final String SERVICE_LOGIN_URL="/000/login";
-
-
-    enum RequestType{
-        SERVICE_LOGIN_URL
-    }
     private Activity mActivity;
-    private RequestType requestTypeEnum;
+    private RequestTypeEnum requestTypeEnum;
     private ProgressDialog mProgress;
-    private ResponseReturnListener listener;
+    private ResponseListener responseListener;
 
-    private DBHelper myDb;
 
-    public ServiceManager(Activity activity, ResponseReturnListener litnr){
+    public ServiceManager(Activity activity, ResponseListener listener){
         this.mActivity = activity;
-        this.listener = litnr;
-        myDb = new DBHelper(activity);
-    }
-
-
-    public void login(Map<String, String> paramMap) throws Exception {
-
-        requestTypeEnum = RequestType.SERVICE_LOGIN_URL;
-
-        createRequest(SERVICE_URL+SERVICE_LOGIN_URL,Request.Method.POST,paramMap, HEADER_TYPE.TOKEN_OR_REGISTER,true);
+        this.responseListener = listener;
 
     }
 
-    public enum HEADER_TYPE{
-        TOKEN_OR_REGISTER,
-        NORMAL
+    /**
+     * Requests
+     * */
+    public void registerRequest(Map<String, String> paramMap) throws Exception {
+
+        requestTypeEnum = RequestTypeEnum.REGISTER;
+
+        createRequest(Constant.SERVICE_REGISTER_URL, Request.Method.POST,paramMap);
+
+    }
+    public void userListRequest(Map<String, String> paramMap) throws Exception {
+
+        requestTypeEnum = RequestTypeEnum.USERLIST;
+
+        createRequest(Constant.SERVICE_USER_LIST_URL, Request.Method.GET,paramMap);
+
     }
 
+
+    /**
+     * Create Request
+     * */
     private CustomRequest jsObjRequest;
     private RequestQueue requestQueue;
-    private void createRequest(String URL, final int reqType, Map<String, String> params, final HEADER_TYPE headerType,boolean isProgressDialogShow) {
 
-        if(!((MainActivity)mActivity).internetConnectionCheck()){
-            ((MainActivity)mActivity).showMessage(mActivity.getString(R.string.internet_connection_error));
+    private void createRequest(String URL, final int reqType, Map<String, String> params) {
+
+        if(!Util.internetConnectionCheck(mActivity)) {
+            Util.messageShow(mActivity, mActivity.getString(R.string.error_internet_connection), Style.ALERT);
             return;
         }
 
-        if(isProgressDialogShow)
-            progresShow();
+        progresShow();
 
-        Util.trustEveryone();
 
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(mActivity);
@@ -80,15 +99,7 @@ public class ServiceManager {
 
                 NetworkResponse response = error.networkResponse;
                 if(response != null && response.data != null){
-//                    switch(response.statusCode){
-//                        case 400:
-//                            json = new String(response.data);
-//                            json = trimMessage(json, "errorMessage");
-//                            if(json != null) displayMessage(json);
-//
-//                            break;
-//
-//                    }
+
 
                 }
 
@@ -99,82 +110,64 @@ public class ServiceManager {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                if(headerType == HEADER_TYPE.TOKEN_OR_REGISTER){
-                    //params.put("Content-Type", "application/json");
-                }else{
-                    //params.put("Content-Type", "application/json");
-                    params.put("appAuthToken",  myDb.getLoginValue().getToken());
-                }
-
+                params.put("Content-Type", "application/json");
                 return params;
             }
 
         };
-        jsObjRequest.setRetryPolicy(new DefaultRetryPolicy(
-                45000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+//        jsObjRequest.setRetryPolicy(new DefaultRetryPolicy(
+//                45000,
+//                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+//                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
         requestQueue.add(jsObjRequest);
     }
 
-    //=========================
+    /**
+     * Response - Callback
+     * */
     @Override
     public void callBackJson(JSONObject jsonObject) {
-    }
 
-*//*
-    private void loginResponse(JSONObject jsonObject) {
-        Gson mGson = new Gson();
-        LoginResponse loginResponse = new LoginResponse();
+        progressDissmis();
 
-//
-        if(jsonObject.toString().contains("errorCode") && jsonObject.toString().contains("errorMessage")) {
-
-            try {
-                loginResponse.setErrorCode(jsonObject.getString("errorCode"));
-                loginResponse.setErrorMessage(jsonObject.getString("errorMessage"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-                loginResponse.setErrorCode("-1");
-                loginResponse.setErrorMessage(mActivity.getResources().getString(R.string.please_try_again_later));
-            }
-        }else{
-            loginResponse = mGson.fromJson(jsonObject.toString(),LoginResponse.class);
+        if(jsonObject == null){
+            Util.messageShow(mActivity, mActivity.getString(R.string.error_general), Style.ALERT);
+            return;
         }
-        listener.returnResponse(loginResponse,Util.ResponseTypeEnum.LOGIN);
-    }
-*//*
 
-
-
-    private void courierAssignResponse(JSONObject jsonObject) {
-        Gson mGson = new Gson();
-        CourierAssignResponse courierAssignResponse = new CourierAssignResponse();
-        //
-        if(jsonObject.toString().contains("errorCode") && jsonObject.toString().contains("errorMessage")) {
-
-            try {
-                courierAssignResponse.setErrorCode(jsonObject.getString("errorCode"));
-                courierAssignResponse.setErrorMessage(jsonObject.getString("errorMessage"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-                courierAssignResponse.setErrorCode("-1");
-                courierAssignResponse.setErrorMessage(mActivity.getResources().getString(R.string.please_try_again_later));
-            }
-        }else{
-            courierAssignResponse = mGson.fromJson(jsonObject.toString(),CourierAssignResponse.class);
-
+        switch (requestTypeEnum) {
+            case REGISTER:
+                registerResponse(jsonObject);
+                break;
+            case USERLIST:
+                userListResponse(jsonObject);
+                break;
         }
-//
 
-        Log.i("--courierAssignResponse ",jsonObject.toString());
+    }
+    /**
+     * Responses
+     * */
+    private void registerResponse(JSONObject jsonObject) {
+        Gson mGson = new Gson();
+        RegisterResponse registerResponse = new RegisterResponse();
+        registerResponse = mGson.fromJson(jsonObject.toString(),RegisterResponse.class);
 
+        responseListener.returnResponse(registerResponse);
+    }
+    private void userListResponse(JSONObject jsonObject) {
+        Gson mGson = new Gson();
+        UserListResponse userListResponse = new UserListResponse();
+        userListResponse = mGson.fromJson(jsonObject.toString(),UserListResponse.class);
 
-        listener.returnResponse(courierAssignResponse,Util.ResponseTypeEnum.COURIERASSIGN);
+        responseListener.returnResponse(userListResponse);
     }
 
 
-    //=====progressdialog
+    /**
+     * Progress
+     * */
     public void progresShow() {
         if (mProgress == null) {
             mProgress = Util.createProgressDialog(mActivity);
@@ -183,10 +176,7 @@ public class ServiceManager {
             if(!mProgress.isShowing()){
                 mProgress.show();
             }
-
         }
-
-
     }
     public void progressDissmis(){
         if (mProgress != null)
@@ -194,6 +184,6 @@ public class ServiceManager {
             mProgress.dismiss();
         }
     }
-    //==================*/
+
 }
 

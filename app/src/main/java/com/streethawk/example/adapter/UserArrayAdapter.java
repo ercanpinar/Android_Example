@@ -5,16 +5,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.streethawk.example.R;
 import com.streethawk.example.module.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ercanpinar on 03/02/2017.

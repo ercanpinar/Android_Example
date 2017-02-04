@@ -10,7 +10,6 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.streethawk.example.R;
-import com.streethawk.example.activity.MainActivity;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
