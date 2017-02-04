@@ -13,6 +13,8 @@ import com.streethawk.example.activity.MainActivity;
 import com.streethawk.example.databinding.FragmentRegisterBinding;
 import com.streethawk.example.util.Util;
 
+import de.keyboardsurfer.android.widget.crouton.Style;
+
 /**
  * Created by ercanpinar on 03/02/2017.
  */
@@ -20,6 +22,7 @@ import com.streethawk.example.util.Util;
 public class RegisterFragment extends Fragment {
 
     private FragmentRegisterBinding fragmentRegisterBinding;
+    private Activity mActivity;
 
     public RegisterFragment() {
     }
@@ -28,10 +31,13 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        mActivity = (MainActivity)getActivity();
+
         fragmentRegisterBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_register, container, false);
 
-
+        if(!Util.internetConnectionCheck(mActivity))
+            Util.messageShow(mActivity,getString(R.string.error_internet_connection), Style.ALERT);
 
         fragmentRegisterBinding.buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override

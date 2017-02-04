@@ -14,8 +14,11 @@ import com.streethawk.example.R;
 import com.streethawk.example.activity.MainActivity;
 import com.streethawk.example.databinding.FragmentListBinding;
 import com.streethawk.example.service.ServiceManager;
+import com.streethawk.example.util.Util;
 
 import java.util.List;
+
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 /**
  * Created by ercanpinar on 03/02/2017.
@@ -41,6 +44,9 @@ public class UserListFragment extends Fragment {
         fragmentListBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_list, container, false);
 
+
+        if(!Util.internetConnectionCheck(mActivity))
+            Util.messageShow(mActivity,getString(R.string.error_internet_connection), Style.ALERT);
 
 
         return fragmentListBinding.getRoot();

@@ -7,4 +7,5 @@
     <string name="error_emailnotvalid">E-mail not valid.</string>
     <string name="hint_email">E-mail</string>
     <string name="hint_name">Name</string>
+    <string name="error_internet_connection">Please check internet connection.</string>
 </resources>

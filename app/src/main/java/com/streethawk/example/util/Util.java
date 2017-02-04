@@ -12,6 +12,9 @@ import android.view.inputmethod.InputMethodManager;
 import com.streethawk.example.R;
 import com.streethawk.example.activity.MainActivity;
 
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
+
 /**
  * Created by ercanpinar on 03/02/2017.
  */
@@ -32,15 +35,12 @@ public class Util {
     /**
      * Methods of controlling the Internet connection status.
      */
-    public static boolean internetConnectionCheck(Context context) {
+    public static boolean internetConnectionCheck(Activity activity) {
 
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-
+        ConnectivityManager cm = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
-        return isConnected;
 
-
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
     /**
@@ -49,18 +49,18 @@ public class Util {
      * @param message The warning message
      * @param style   Warning message type
      */
-    /*public void messageShow(String message, Style style) {
+    public static void messageShow(Activity activity, String message, Style style) {
         Crouton.cancelAllCroutons();
         if (style.equals(Style.ALERT))
             Crouton.makeText(
-                    mActivity, "Alert!" + "\n" + message + "\n", style
+                    activity, "Alert!" + "\n" + message + "\n", style
             ).show();
         else
             Crouton.makeText(
-                    mActivity, "\n" + message + "\n", style
+                    activity, "\n" + message + "\n", style
             ).show();
 
-    }*/
+    }
 
     //Progress Dialog
     public static ProgressDialog createProgressDialog(Context mContext , boolean isCancelable, String message) {
