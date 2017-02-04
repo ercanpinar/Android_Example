@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">SHU</string>
-    <string name="name_title">Name : </string>
-    <string name="email_title">E-mail : </string>
+    <string name="name_title">Fullname : </string>
+    <string name="email_title">Email : </string>
     <string name="splash_text">StreetHawk</string>
     <string name="loading">Loading</string>
-    <string name="error_emailnotvalid">E-mail not valid.</string>
-    <string name="hint_email">E-mail</string>
-    <string name="hint_name">Name</string>
+    <string name="error_emailnotvalid">Email not valid.</string>
     <string name="error_internet_connection">Please check internet connection.</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_all_records">ALL RECORDS</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+    <string name="title_register">New User</string>
 </resources>

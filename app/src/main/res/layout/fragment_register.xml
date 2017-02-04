@@ -3,56 +3,85 @@
     xmlns:whatever="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorAccent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/bg_register"
         android:gravity="center"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:padding="10dp" >
 
-        <TextView
-            android:text="New Person"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:layout_marginBottom="20dp" />
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" >
+            <TextView
+                android:text="@string/title_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="20dp" />
 
-        <com.andreabaccega.widget.FormEditText
-            whatever:testType="alpha"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/formEditTextName"
-            android:hint="@string/hint_name"
-            android:background="@color/gray_edittext_background"
-            android:layout_marginBottom="20dp" />
 
-        <com.andreabaccega.widget.FormEditText
-            whatever:testType="regexp"
-            whatever:customRegexp="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-            whatever:testErrorString="@string/error_emailnotvalid"
-            android:id="@+id/formEditTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress"
-            android:background="@color/gray_edittext_background"
-            android:layout_marginBottom="20dp"
-            />
-        <Button
-            android:text="Send"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/buttonSend"
-            android:layout_margin="20dp" />
 
-        <Button
-            android:text="All Records"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/buttonShowAllRecord"
-            android:layout_margin="20dp" />
+            <com.andreabaccega.widget.FormEditText
+                whatever:testType="alpha"
+                android:id="@+id/formEditTextName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/input_register_bg"
+                android:hint="@string/hint_name"
+                android:padding="10dp"
+                android:lines="1"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint" />
+
+            <com.andreabaccega.widget.FormEditText
+                whatever:testType="regexp"
+                whatever:customRegexp="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                whatever:testErrorString="@string/error_emailnotvalid"
+                android:id="@+id/formEditTextEmail"
+                android:inputType="textEmailAddress"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/input_register_bg"
+                android:hint="@string/hint_email"
+                android:padding="10dp"
+                android:lines="1"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint"/>
+
+
+            <!-- Register Button -->
+
+            <Button
+                android:id="@+id/buttonSend"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="#ea4c88"
+                android:text="@string/btn_register"
+                android:textColor="@color/white" />
+
+            <!-- Link to Records Screen -->
+
+
+            <Button
+                android:id="@+id/buttonShowAllRecord"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dip"
+                android:background="#ea4c88"
+                android:text="@string/btn_all_records"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
     </LinearLayout>
 </layout>
