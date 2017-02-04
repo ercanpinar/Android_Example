@@ -11,6 +11,10 @@ import com.streethawk.example.R;
 
 /**
  * Created by ercanpinar on 03/02/2017.
+ **/
+
+/**
+ * ***** Application Splash Screen *****
  */
 
 public class SplashActivity extends AppCompatActivity {
@@ -19,13 +23,17 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /****** Actionbar Hide *****/
         ActionBar actionBar = this.getSupportActionBar();
         actionBar.hide();
 
+        /****** Spash Fullscreen *****/
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_splash);
 
+        /****** MainActivity Open *****/
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -33,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        },1*2000);
+        }, 1 * 2000);
 
     }
 }

@@ -3,13 +3,20 @@ package com.streethawk.example.service.response;
 import com.streethawk.example.module.Post;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ercanpinar on 04/02/2017.
  */
 
-public class PostListResponse extends BaseResponse{
+/**
+ * ******** PostListResponse extends with BaseResponse ********
+ */
+
+public class PostListResponse extends BaseResponse {
+
+    /**
+     * ******** Declare Used Variables ********
+     */
     private ArrayList<Post> postList;
 
     public PostListResponse(ArrayList<Post> postList) {

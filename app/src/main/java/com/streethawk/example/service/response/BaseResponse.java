@@ -4,7 +4,13 @@ package com.streethawk.example.service.response;
  * Created by ercanpinar on 04/02/2017.
  */
 
+/**
+ * ******** BaseResponse ********
+ */
 public class BaseResponse {
+    /**
+     * ******** Declare Used Variables ********
+     */
     private String errorCode;
     private String errorMessage;
     private String successMessage;

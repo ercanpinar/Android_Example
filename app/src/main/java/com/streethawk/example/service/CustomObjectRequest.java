@@ -16,19 +16,42 @@ import java.util.Map;
  * Created by ercanpinar on 04/02/2017.
  */
 
-public class CustomRequest  extends Request<JSONObject> {
+/**
+ * ******** CustomObjectRequest extends with Request (JSONObject) ********
+ */
 
+public class CustomObjectRequest extends Request<JSONObject> {
+
+    /**
+     * ******** Declare Used Variables ********
+     */
     private Response.Listener<JSONObject> listener;
     private Map<String, String> params;
 
 
-    public CustomRequest(int method, String url, Map<String, String> params,
-                         Response.Listener<JSONObject> reponseListener, Response.ErrorListener errorListener) {
+    /**
+     * ******** CustomObjectRequest Constructor ********
+     *
+     * @param url             Service URL
+     * @param method          RequestType - POST - GET
+     * @param params          Request parameters
+     * @param reponseListener Response Listener
+     * @param errorListener   Error Listener
+     */
+
+    public CustomObjectRequest(int method, String url, Map<String, String> params,
+                               Response.Listener<JSONObject> reponseListener, Response.ErrorListener errorListener) {
         super(method, url, errorListener);
         this.listener = reponseListener;
         this.params = params;
     }
 
+
+    /**
+     * ******** parseNetworkResponse ********
+     *
+     * @param response NetworkResponse
+     */
     @Override
     protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
         try {
@@ -43,9 +66,14 @@ public class CustomRequest  extends Request<JSONObject> {
         }
     }
 
+
+    /**
+     * ******** deliverResponse ********
+     *
+     * @param response JSONObjectResponse
+     */
     @Override
     protected void deliverResponse(JSONObject response) {
-        // TODO Auto-generated method stub
         listener.onResponse(response);
     }
 }

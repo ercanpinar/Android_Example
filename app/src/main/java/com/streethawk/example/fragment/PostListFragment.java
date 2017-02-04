@@ -24,14 +24,17 @@ import de.keyboardsurfer.android.widget.crouton.Style;
  * Created by ercanpinar on 03/02/2017.
  */
 
-public class PostListFragment extends Fragment implements ResponseListener{
-
+public class PostListFragment extends Fragment implements ResponseListener {
+    /**
+     * ******** Declare Used Variables ********
+     */
     private FragmentPostListBinding fragmentPostListBinding;
-
     private Activity mActivity;
     private ServiceManager mServiceManager;
 
-
+    /**
+     * ******** CustomFragment Constructor ********
+     */
     public PostListFragment() {
     }
 
@@ -39,19 +42,19 @@ public class PostListFragment extends Fragment implements ResponseListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        mActivity = (MainActivity)getActivity();
+        mActivity = (MainActivity) getActivity();
 
         fragmentPostListBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_post_list, container, false);
 
 
-        if(!Util.internetConnectionCheck(mActivity))
-            Util.messageShow(mActivity,getString(R.string.message_internet_connection), Style.INFO);
+        if (!Util.internetConnectionCheck(mActivity))
+            Util.messageShow(mActivity, getString(R.string.message_internet_connection), Style.INFO);
 
-
-        mServiceManager =  new ServiceManager(mActivity,this);
+        /****** GetPostList ServiceCall ******/
+        mServiceManager = new ServiceManager(mActivity, this);
         try {
-            mServiceManager.userListRequest();
+            mServiceManager.postListRequest();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -59,17 +62,22 @@ public class PostListFragment extends Fragment implements ResponseListener{
         return fragmentPostListBinding.getRoot();
     }
 
+    /**
+     * ********* ReturnResponse ********
+     *
+     * @param response BaseResponse -> PostListResponse
+     */
     @Override
     public void returnResponse(BaseResponse response) {
-        if(response !=null){
+        if (response != null) {
             PostListResponse postListResponse = (PostListResponse) response;
 
-            PostArrayAdapter postArrayAdapter =  new PostArrayAdapter(mActivity,postListResponse.getPostList());
+            PostArrayAdapter postArrayAdapter = new PostArrayAdapter(mActivity, postListResponse.getPostList());
             fragmentPostListBinding.listViewPostList.setAdapter(postArrayAdapter);
 
 
-        }else{
-            Util.messageShow(mActivity,getString(R.string.error_general), Style.ALERT);
+        } else {
+            Util.messageShow(mActivity, getString(R.string.error_general), Style.ALERT);
         }
     }
 }

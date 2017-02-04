@@ -17,12 +17,25 @@ import java.util.Map;
  * Created by ercanpinar on 04/02/2017.
  */
 
+/**
+ * ******** CustomArrayRequest extends with Request (JSONArray) ********
+ */
 public class CustomArrayRequest extends Request<JSONArray> {
-
+    /**
+     * ******** Declare Used Variables ********
+     */
     private Response.Listener<JSONArray> listener;
     private Map<String, String> params;
 
-
+    /**
+     * ******** CustomArrayRequest Constructor ********
+     *
+     * @param url             Service URL
+     * @param method          RequestType - POST - GET
+     * @param params          Request parameters
+     * @param reponseListener Response Listener
+     * @param errorListener   Error Listener
+     */
     public CustomArrayRequest(int method, String url, Map<String, String> params,
                               Response.Listener<JSONArray> reponseListener, Response.ErrorListener errorListener) {
         super(method, url, errorListener);
@@ -30,6 +43,11 @@ public class CustomArrayRequest extends Request<JSONArray> {
         this.params = params;
     }
 
+    /**
+     * ******** parseNetworkResponse ********
+     *
+     * @param response NetworkResponse
+     */
     @Override
     protected Response<JSONArray> parseNetworkResponse(NetworkResponse response) {
         try {
@@ -44,9 +62,13 @@ public class CustomArrayRequest extends Request<JSONArray> {
         }
     }
 
+    /**
+     * ******** deliverResponse ********
+     *
+     * @param response JSONArrayResponse
+     */
     @Override
     protected void deliverResponse(JSONArray response) {
-        // TODO Auto-generated method stub
         listener.onResponse(response);
     }
 }

@@ -18,10 +18,13 @@ import de.keyboardsurfer.android.widget.crouton.Style;
  * Created by ercanpinar on 03/02/2017.
  */
 
+/**
+ * ******* Util Class *********
+ **/
 public class Util {
 
     /**
-     * Close the keyboard method.
+     * ******* Close the keyboard method. *******
      */
     public static void closeKeyboard(Activity activity) {
         View view = activity.getCurrentFocus();
@@ -32,7 +35,7 @@ public class Util {
     }
 
     /**
-     * Methods of controlling the Internet connection status.
+     * ******* Methods of controlling the Internet connection status. *******
      */
     public static boolean internetConnectionCheck(Activity activity) {
 
@@ -43,7 +46,7 @@ public class Util {
     }
 
     /**
-     * The method shown in the warning message.
+     * ******* The method shown in the warning message. *******
      *
      * @param message The warning message
      * @param style   Warning message type
@@ -62,25 +65,48 @@ public class Util {
     }
 
     /**
-     *Progress Dialog - Normal, isCancelable , notCancalable etc.
+     * ******* Progress Dialog *******
+     *
+     * @param mContext     Activity
+     * @param isCancelable Cancelable
+     * @param message      Message
+     */
+    public static ProgressDialog createProgressDialog(Context mContext, boolean isCancelable, String message) {
+        return createProgressDialogBase(mContext, isCancelable, message);
+    }
+
+    /**
+     * ******* Progress Dialog *******
+     *
+     * @param mContext     Activity
+     * @param isCancelable Cancelable
+     */
+    public static ProgressDialog createProgressDialog(Context mContext, boolean isCancelable) {
+        return createProgressDialogBase(mContext, isCancelable, "");
+    }
+
+    /**
+     * ******* Progress Dialog *******
+     *
+     * @param mContext Activity
+     */
+    public static ProgressDialog createProgressDialog(Context mContext) {
+        return createProgressDialogBase(mContext, false, "");
+    }
+
+    /**
+     * ******* Progress Dialog  - BASE *******
+     *
+     * @param mContext     Activity
+     * @param isCancelable Cancelable
+     * @param message      Message
      */
 
-    public static ProgressDialog createProgressDialog(Context mContext , boolean isCancelable, String message) {
-        return createProgressDialogBase(mContext,isCancelable,message);
-    }
-
-    public static ProgressDialog createProgressDialog(Context mContext , boolean isCancelable) {
-        return createProgressDialogBase(mContext,isCancelable,"");
-    }
-
-    public static ProgressDialog createProgressDialog(Context mContext ) {
-        return createProgressDialogBase(mContext,false,"");
-    }
-    public static ProgressDialog createProgressDialogBase(Context mContext , boolean isCancelable,String message) {
+    public static ProgressDialog createProgressDialogBase(Context mContext, boolean isCancelable, String message) {
         ProgressDialog dialog = new ProgressDialog(mContext);
         dialog.setCancelable(isCancelable);
         dialog.setMessage(mContext.getString(R.string.loading));
-        if(!message.equals(""))
+        if (!message.equals(""))
             dialog.setMessage(message);
 
         try {

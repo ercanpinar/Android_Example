@@ -107,7 +107,7 @@ public class PostArrayAdapter extends BaseAdapter {
     }
 
     /**
-     * get data
+     * ******** GetPostData ********
      */
 
     public ArrayList getData() {

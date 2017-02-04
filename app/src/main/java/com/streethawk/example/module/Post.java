@@ -6,8 +6,14 @@ import java.io.Serializable;
  * Created by ercanpinar on 03/02/2017.
  */
 
-public class Post implements Serializable {
 
+/**
+ * ****** Post class implements  Serializable ***********
+ */
+public class Post implements Serializable {
+    /**
+     * ******** Declare Used Variables ********
+     */
     private int userId;
     private int id;
     private String title;

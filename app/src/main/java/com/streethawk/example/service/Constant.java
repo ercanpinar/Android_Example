@@ -4,11 +4,14 @@ package com.streethawk.example.service;
  * Created by ercanpinar on 04/02/2017.
  */
 
+/**
+ * ******* Servis yapısının kullanacağı sabit veriler sayfası. *******
+ */
+
 public class Constant {
 
-    public static final String SERVICE_URL="https://jsonplaceholder.typicode.com/";
-
-    public static final String SERVICE_NEW_POST_URL=SERVICE_URL + "posts";
-    public static final String SERVICE_POST_LIST_URL=SERVICE_URL + "posts";
+    public static final String SERVICE_URL = "https://jsonplaceholder.typicode.com/";
+    public static final String SERVICE_NEW_POST_URL = SERVICE_URL + "posts";
+    public static final String SERVICE_POST_LIST_URL = SERVICE_URL + "posts";
 
 }

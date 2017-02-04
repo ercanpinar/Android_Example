@@ -26,12 +26,23 @@ import de.keyboardsurfer.android.widget.crouton.Style;
  * Created by ercanpinar on 03/02/2017.
  */
 
-public class NewPostFragment extends Fragment implements ResponseListener{
+/**
+ * **** NewPost Create and Send Page ****
+ */
 
+public class NewPostFragment extends Fragment implements ResponseListener {
+
+    /**
+     * ******** Declare Used Variables ********
+     */
     private FragmentNewPostBinding fragmentNewPostBinding;
     private Activity mActivity;
     private ServiceManager mServiceManager;
 
+
+    /**
+     * ******** CustomFragment Constructor ********
+     */
     public NewPostFragment() {
     }
 
@@ -39,22 +50,21 @@ public class NewPostFragment extends Fragment implements ResponseListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        mActivity = (MainActivity)getActivity();
+        mActivity = (MainActivity) getActivity();
 
         fragmentNewPostBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_new_post, container, false);
 
-        if(!Util.internetConnectionCheck(mActivity))
-            Util.messageShow(mActivity,getString(R.string.message_internet_connection), Style.INFO);
+        if (!Util.internetConnectionCheck(mActivity))
+            Util.messageShow(mActivity, getString(R.string.message_internet_connection), Style.INFO);
 
-        mServiceManager =  new ServiceManager(mActivity,this);
-
+        mServiceManager = new ServiceManager(mActivity, this);
 
 
         fragmentNewPostBinding.buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(fragmentNewPostBinding.formEditTextTitle.testValidity() && fragmentNewPostBinding.formEditTextBody.testValidity())
+                if (fragmentNewPostBinding.formEditTextTitle.testValidity() && fragmentNewPostBinding.formEditTextBody.testValidity())
                     sendNewPost();
             }
         });
@@ -62,16 +72,19 @@ public class NewPostFragment extends Fragment implements ResponseListener{
         fragmentNewPostBinding.buttonShowAllRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).replaceFragment(new PostListFragment());
+                ((MainActivity) getActivity()).replaceFragment(new PostListFragment());
             }
         });
 
         return fragmentNewPostBinding.getRoot();
     }
 
+    /**
+     * ********* SendNewPost  *********
+     */
     private void sendNewPost() {
         Map<String, String> paramMap = new HashMap<String, String>();
-        paramMap.put("title",fragmentNewPostBinding.formEditTextTitle.getText().toString());
+        paramMap.put("title", fragmentNewPostBinding.formEditTextTitle.getText().toString());
         paramMap.put("body", fragmentNewPostBinding.formEditTextBody.getText().toString());
         try {
             mServiceManager.sendNewPostRequest(paramMap);
@@ -81,14 +94,18 @@ public class NewPostFragment extends Fragment implements ResponseListener{
 
     }
 
+    /**
+     * ********* ReturnResponse ********
+     *
+     * @param response BaseResponse -> NewPostResponse
+     */
     @Override
     public void returnResponse(BaseResponse response) {
-        if(response !=null){
-//            NewPostResponse registerResponse = (NewPostResponse) response;
-
-            Util.messageShow(mActivity,getString(R.string.new_post_success), Style.CONFIRM);
-        }else{
-            Util.messageShow(mActivity,getString(R.string.error_general), Style.ALERT);
+        if (response != null) {
+            //NewPostResponse registerResponse = (NewPostResponse) response;
+            Util.messageShow(mActivity, getString(R.string.new_post_success), Style.CONFIRM);
+        } else {
+            Util.messageShow(mActivity, getString(R.string.error_general), Style.ALERT);
         }
     }
 }
