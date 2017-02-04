@@ -136,7 +136,7 @@ JSON service.
 
    Request Type GET
 
-    ** https://jsonplaceholder.typicode.com/posts**
+  ** https://jsonplaceholder.typicode.com/posts**
 
 
 
