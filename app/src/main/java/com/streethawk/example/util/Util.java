@@ -61,7 +61,10 @@ public class Util {
 
     }
 
-    //Progress Dialog
+    /**
+     *Progress Dialog - Normal, isCancelable , notCancalable etc.
+     */
+
     public static ProgressDialog createProgressDialog(Context mContext , boolean isCancelable, String message) {
         return createProgressDialogBase(mContext,isCancelable,message);
     }

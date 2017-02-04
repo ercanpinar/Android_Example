@@ -5,7 +5,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/bg_register"
+        android:background="@color/bg_post"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="10dp">
@@ -19,7 +19,7 @@
             android:paddingRight="20dp">
 
             <TextView
-                android:text="@string/title_register"
+                android:text="@string/title_new_post"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -31,32 +31,29 @@
 
             <com.andreabaccega.widget.FormEditText
                 whatever:testType="alpha"
-                android:id="@+id/formEditTextName"
+                android:id="@+id/formEditTextTitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@color/input_register_bg"
-                android:hint="@string/hint_name"
+                android:background="@color/input_post_bg"
+                android:hint="@string/hint_title"
                 android:padding="10dp"
                 android:lines="1"
-                android:textColor="@color/input_register"
-                android:textColorHint="@color/input_register_hint" />
+                android:textColor="@color/input_post"
+                android:textColorHint="@color/input_post_hint" />
 
             <com.andreabaccega.widget.FormEditText
-                whatever:testType="regexp"
-                whatever:customRegexp="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-                whatever:testErrorString="@string/error_emailnotvalid"
-                android:id="@+id/formEditTextEmail"
-                android:inputType="textEmailAddress"
+                whatever:testType="alpha"
+                android:id="@+id/formEditTextBody"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@color/input_register_bg"
-                android:hint="@string/hint_email"
+                android:background="@color/input_post_bg"
+                android:hint="@string/hint_body"
                 android:padding="10dp"
                 android:lines="1"
-                android:textColor="@color/input_register"
-                android:textColorHint="@color/input_register_hint" />
+                android:textColor="@color/input_post"
+                android:textColorHint="@color/input_post_hint" />
 
 
             <!-- Register Button -->
@@ -67,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dip"
                 android:background="#ea4c88"
-                android:text="@string/btn_register"
+                android:text="@string/btn_new_post"
                 android:textColor="@color/white" />
 
             <!-- Link to Records Screen -->
@@ -79,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dip"
                 android:background="#ea4c88"
-                android:text="@string/btn_all_records"
+                android:text="@string/btn_post_list"
                 android:textColor="@color/white" />
         </LinearLayout>
 

@@ -1,18 +1,18 @@
 <resources>
-    <string name="app_name">SHU</string>
-    <string name="name_title">Fullname : </string>
-    <string name="email_title">Email : </string>
+    <string name="app_name">SH Post</string>
+    <string name="post_title">Title : </string>
+    <string name="post_body_title">Body : </string>
     <string name="splash_text">StreetHawk</string>
     <string name="loading">Loading</string>
-    <string name="error_emailnotvalid">Email not valid.</string>
-    <string name="error_internet_connection">Please check internet connection.</string>
+    <string name="error_internet_connection">Internet connection problem.</string>
+    <string name="message_internet_connection">Please check internet connection.</string>
     <string name="error_general">Error, Please try again.</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_name">Fullname</string>
-    <string name="btn_all_records">ALL RECORDS</string>
-    <string name="btn_register">REGISTER</string>
-    <string name="welcome">Welcome</string>
-    <string name="btn_logout">LOGOUT</string>
-    <string name="name">Fullname</string>
-    <string name="title_register">New User</string>
+    <string name="hint_body">Body</string>
+    <string name="hint_title">Title</string>
+    <string name="btn_post_list">POST LIST</string>
+    <string name="btn_new_post">SEND</string>
+
+    <string name="title">Fullname</string>
+    <string name="title_new_post">New Post</string>
+    <string name="new_post_success">Post Send Success</string>
 </resources>

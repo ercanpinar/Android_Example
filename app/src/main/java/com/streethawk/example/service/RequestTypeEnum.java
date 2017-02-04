@@ -5,6 +5,6 @@ package com.streethawk.example.service;
  */
 
 public enum RequestTypeEnum {
-    REGISTER,
-    USERLIST
+    NEWPOST,
+    POSTLIST
 }

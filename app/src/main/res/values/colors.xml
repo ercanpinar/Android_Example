@@ -4,11 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
-    <color name="bg_register">#2e3237</color>
+    <color name="bg_post">#2e3237</color>
     <color name="white">#ffffff</color>
-    <color name="input_register">#888888</color>
-    <color name="input_register_bg">#3b4148</color>
-    <color name="input_register_hint">#5e6266</color>
-    <color name="lbl_name">#333333</color>
-    <color name="btn_logut_bg">#ff6861</color>
+    <color name="input_post">#888888</color>
+    <color name="input_post_bg">#3b4148</color>
+    <color name="input_post_hint">#5e6266</color>
 </resources>

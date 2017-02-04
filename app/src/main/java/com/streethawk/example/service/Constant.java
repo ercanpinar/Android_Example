@@ -6,9 +6,9 @@ package com.streethawk.example.service;
 
 public class Constant {
 
-    public static final String SERVICE_URL="http://sandbox.000.com";
+    public static final String SERVICE_URL="https://jsonplaceholder.typicode.com/";
 
-    public static final String SERVICE_REGISTER_URL=SERVICE_URL + "/000/login";
-    public static final String SERVICE_USER_LIST_URL=SERVICE_URL + "/000/login";
+    public static final String SERVICE_NEW_POST_URL=SERVICE_URL + "posts";
+    public static final String SERVICE_POST_LIST_URL=SERVICE_URL + "posts";
 
 }

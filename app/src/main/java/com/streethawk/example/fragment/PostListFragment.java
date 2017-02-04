@@ -10,10 +10,11 @@ import android.view.ViewGroup;
 
 import com.streethawk.example.R;
 import com.streethawk.example.activity.MainActivity;
-import com.streethawk.example.databinding.FragmentListBinding;
+import com.streethawk.example.databinding.FragmentPostListBinding;
 import com.streethawk.example.service.ServiceManager;
 import com.streethawk.example.service.listener.ResponseListener;
 import com.streethawk.example.service.response.BaseResponse;
+import com.streethawk.example.service.response.PostListResponse;
 import com.streethawk.example.util.Util;
 
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -22,15 +23,15 @@ import de.keyboardsurfer.android.widget.crouton.Style;
  * Created by ercanpinar on 03/02/2017.
  */
 
-public class UserListFragment extends Fragment implements ResponseListener{
+public class PostListFragment extends Fragment implements ResponseListener{
 
-    private FragmentListBinding fragmentListBinding;
+    private FragmentPostListBinding fragmentPostListBinding;
 
     private Activity mActivity;
     private ServiceManager mServiceManager;
 
 
-    public UserListFragment() {
+    public PostListFragment() {
     }
 
     @Override
@@ -39,20 +40,30 @@ public class UserListFragment extends Fragment implements ResponseListener{
 
         mActivity = (MainActivity)getActivity();
 
-        fragmentListBinding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_list, container, false);
+        fragmentPostListBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_post_list, container, false);
 
 
         if(!Util.internetConnectionCheck(mActivity))
-            Util.messageShow(mActivity,getString(R.string.error_internet_connection), Style.ALERT);
+            Util.messageShow(mActivity,getString(R.string.message_internet_connection), Style.INFO);
 
 
-        return fragmentListBinding.getRoot();
+        mServiceManager =  new ServiceManager(mActivity,this);
+        try {
+            mServiceManager.userListRequest();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return fragmentPostListBinding.getRoot();
     }
 
     @Override
     public void returnResponse(BaseResponse response) {
         if(response !=null){
+            PostListResponse postListResponse = (PostListResponse) response;
+
+
 
         }else{
             Util.messageShow(mActivity,getString(R.string.error_general), Style.ALERT);

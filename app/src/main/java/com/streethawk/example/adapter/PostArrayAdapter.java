@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.streethawk.example.R;
-import com.streethawk.example.module.User;
+import com.streethawk.example.module.Post;
 
 import java.util.ArrayList;
 
@@ -20,24 +20,24 @@ import java.util.ArrayList;
 /**
  * ****** Adapter class extends with BaseAdapter***********
  */
-public class UserArrayAdapter extends BaseAdapter {
+public class PostArrayAdapter extends BaseAdapter {
 
     /**
      * ******** Declare Used Variables ********
      */
     private Activity activity;
-    private ArrayList userDataArrayList;
+    private ArrayList postDataArrayList;
     private static LayoutInflater inflater = null;
 
 
     /**
      * **********  CustomAdapter Constructor ****************
      */
-    public UserArrayAdapter(Activity a, ArrayList<User> d) {
+    public PostArrayAdapter(Activity a, ArrayList<Post> d) {
 
         /********** Take passed values **********/
         activity = a;
-        userDataArrayList = d;
+        postDataArrayList = d;
 
         /***********  Layout inflator to call external xml layout () ***********/
         inflater = (LayoutInflater) activity.
@@ -48,7 +48,7 @@ public class UserArrayAdapter extends BaseAdapter {
      * ***** What is the size of Passed Arraylist Size ***********
      */
     public int getCount() {
-        return userDataArrayList.size();
+        return postDataArrayList.size();
     }
 
     public Object getItem(int position) {
@@ -78,28 +78,28 @@ public class UserArrayAdapter extends BaseAdapter {
 
         if (convertView == null) {
 
-            /****** Inflate item_user.xml file for each row ( Defined below ) *******/
-            vi = inflater.inflate(R.layout.item_user, null);
+            /****** Inflate item_post.xml file for each row ( Defined below ) *******/
+            vi = inflater.inflate(R.layout.item_post, null);
 
-            /****** View Holder Object to contain item_user.xml file elements ******/
+            /****** View Holder Object to contain item_post.xml file elements ******/
 
             holder = new ViewHolder();
-            holder.nameTextView = (TextView) vi.findViewById(R.id.textViewName);
-            holder.emailTextView = (TextView) vi.findViewById(R.id.textViewEmail);
+            holder.nameTextView = (TextView) vi.findViewById(R.id.textViewTitle);
+            holder.emailTextView = (TextView) vi.findViewById(R.id.textViewBody);
             /************  Set holder with LayoutInflater ************/
             vi.setTag(holder);
         } else
             holder = (ViewHolder) vi.getTag();
 
-        if (userDataArrayList.size() > 0) {
+        if (postDataArrayList.size() > 0) {
 
             /***** Get each Model object from Arraylist ********/
-            User userTempValue = (User) userDataArrayList.get(position);
+            Post postTempValue = (Post) postDataArrayList.get(position);
 
             /************  Set Model values in Holder elements ***********/
 
-            holder.nameTextView.setText("userTempValue.name");
-            holder.emailTextView.setText("userTempValue.email");
+            holder.nameTextView.setText(postTempValue.getTitle());
+            holder.emailTextView.setText(postTempValue.getBody());
 
         }
 
@@ -111,7 +111,7 @@ public class UserArrayAdapter extends BaseAdapter {
      */
 
     public ArrayList getData() {
-        return userDataArrayList;
+        return postDataArrayList;
     }
 }
 

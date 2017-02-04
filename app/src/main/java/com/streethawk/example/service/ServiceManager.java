@@ -2,9 +2,9 @@ package com.streethawk.example.service;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -14,8 +14,8 @@ import com.google.gson.Gson;
 import com.streethawk.example.R;
 import com.streethawk.example.service.listener.JsonObjectReturnListener;
 import com.streethawk.example.service.listener.ResponseListener;
-import com.streethawk.example.service.response.RegisterResponse;
-import com.streethawk.example.service.response.UserListResponse;
+import com.streethawk.example.service.response.NewPostResponse;
+import com.streethawk.example.service.response.PostListResponse;
 import com.streethawk.example.util.Util;
 
 import org.json.JSONObject;
@@ -46,18 +46,18 @@ public class ServiceManager implements JsonObjectReturnListener{
     /**
      * Requests
      * */
-    public void registerRequest(Map<String, String> paramMap) throws Exception {
+    public void sendNewPostRequest(Map<String, String> paramMap) throws Exception {
 
-        requestTypeEnum = RequestTypeEnum.REGISTER;
+        requestTypeEnum = RequestTypeEnum.NEWPOST;
 
-        createRequest(Constant.SERVICE_REGISTER_URL, Request.Method.POST,paramMap);
+        createRequest(Constant.SERVICE_NEW_POST_URL, Request.Method.POST,paramMap);
 
     }
-    public void userListRequest(Map<String, String> paramMap) throws Exception {
+    public void userListRequest() throws Exception {
 
-        requestTypeEnum = RequestTypeEnum.USERLIST;
+        requestTypeEnum = RequestTypeEnum.POSTLIST;
 
-        createRequest(Constant.SERVICE_USER_LIST_URL, Request.Method.GET,paramMap);
+        createRequest(Constant.SERVICE_POST_LIST_URL, Request.Method.GET,null);
 
     }
 
@@ -94,15 +94,7 @@ public class ServiceManager implements JsonObjectReturnListener{
             @Override
             public void onErrorResponse(VolleyError error) {
                 progressDissmis();
-
-                String json = null;
-
-                NetworkResponse response = error.networkResponse;
-                if(response != null && response.data != null){
-
-
-                }
-
+                Toast.makeText(mActivity,mActivity.getString(R.string.error_general),Toast.LENGTH_SHORT).show();
             }
         })
         {
@@ -115,6 +107,8 @@ public class ServiceManager implements JsonObjectReturnListener{
             }
 
         };
+
+
 //        jsObjRequest.setRetryPolicy(new DefaultRetryPolicy(
 //                45000,
 //                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
@@ -137,10 +131,10 @@ public class ServiceManager implements JsonObjectReturnListener{
         }
 
         switch (requestTypeEnum) {
-            case REGISTER:
+            case NEWPOST:
                 registerResponse(jsonObject);
                 break;
-            case USERLIST:
+            case POSTLIST:
                 userListResponse(jsonObject);
                 break;
         }
@@ -151,17 +145,17 @@ public class ServiceManager implements JsonObjectReturnListener{
      * */
     private void registerResponse(JSONObject jsonObject) {
         Gson mGson = new Gson();
-        RegisterResponse registerResponse = new RegisterResponse();
-        registerResponse = mGson.fromJson(jsonObject.toString(),RegisterResponse.class);
+        NewPostResponse newPostResponse = new NewPostResponse();
+        newPostResponse = mGson.fromJson(jsonObject.toString(),NewPostResponse.class);
 
-        responseListener.returnResponse(registerResponse);
+        responseListener.returnResponse(newPostResponse);
     }
     private void userListResponse(JSONObject jsonObject) {
         Gson mGson = new Gson();
-        UserListResponse userListResponse = new UserListResponse();
-        userListResponse = mGson.fromJson(jsonObject.toString(),UserListResponse.class);
+        PostListResponse postListResponse = new PostListResponse();
+        postListResponse = mGson.fromJson(jsonObject.toString(),PostListResponse.class);
 
-        responseListener.returnResponse(userListResponse);
+        responseListener.returnResponse(postListResponse);
     }
 
 
