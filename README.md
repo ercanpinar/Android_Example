@@ -132,11 +132,47 @@ JSON service.
 
   ** https://jsonplaceholder.typicode.com/posts**
 
+Example:
+
+```
+#!json
+{
+    "title": "title Text",
+    "body": "body Text"
+  }
+```
+
+
+
+
+
  * **All Post** 
 
    Request Type GET
 
   ** https://jsonplaceholder.typicode.com/posts**
+
+Example:
+
+
+```
+#!json
+
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "title Text 1",
+    "body": "body Text1"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "Title Text2",
+    "body": "body Text2"
+  }
+]
+```
 
 
 
