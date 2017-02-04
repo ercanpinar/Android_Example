@@ -1,9 +1,5 @@
 package com.streethawk.example;
 
-import android.app.Activity;
-
-import com.andreabaccega.widget.FormEditText;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

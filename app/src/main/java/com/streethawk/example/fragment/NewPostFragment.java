@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import com.streethawk.example.R;
 import com.streethawk.example.activity.MainActivity;
-
 import com.streethawk.example.databinding.FragmentNewPostBinding;
 import com.streethawk.example.service.ServiceManager;
 import com.streethawk.example.service.listener.ResponseListener;

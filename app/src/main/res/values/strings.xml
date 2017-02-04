@@ -11,8 +11,6 @@
     <string name="hint_title">Title</string>
     <string name="btn_post_list">POST LIST</string>
     <string name="btn_new_post">SEND</string>
-
-    <string name="title">Fullname</string>
     <string name="title_new_post">New Post</string>
     <string name="new_post_success">Post Send Success</string>
 </resources>
