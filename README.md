@@ -76,31 +76,31 @@ compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
     exclude group: 'com.google.android', module: 'support-v4'
 }
 
-* **Loading**
+* **[Loading](https://github.com/81813780/AVLoadingIndicatorView)**
 
 Used for Loading at Opening
 
 compile 'com.wang.avi:library:2.1.3'
 
-* **Volley**
+* **[Volley](https://github.com/mcxiaoke/android-volley)**
 
 Used for WebService Query
 
 compile 'com.mcxiaoke.volley:library:1.0.19'
 
-* **Gson**
+* **[Gson](https://github.com/google/gson)**
 
 Used for Web Service responses (JSON)
 
 compile 'com.google.code.gson:gson:2.6.1'
 
-* **EditTextValidator**
+* **[EditTextValidator](https://github.com/vekexasia/android-edittext-validator)**
 
 Used for EditText Validation.
 
 compile('com.andreabaccega:android-form-edittext:1.3.+')
 
-* **HockeyApp**
+* **[HockeyApp](https://hockeyapp.net)**
 
 Crash test version of the application and follow-up were used for distribution.
  
