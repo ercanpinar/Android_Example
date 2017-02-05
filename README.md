@@ -20,6 +20,13 @@
 
 Send a new post and was developed to display the post sent earlier.
 
+### Application Flow  ###
+
+The Splash Screen is displayed for 2 seconds to the user. Then the New Post Page opens. The user can send a new post from this page with the "SEND" Button: (Filling the Title and Body fields completely).
+
+From this page the user opens the page displaying the previously posted posts with "ALL POST" button. It automatically retrieves the POST list from the server when the page is opened.
+
+
 ### Screens ###
 
 Implementation occurs on three screens
@@ -117,8 +124,16 @@ testCompile 'junit:junit:4.12'
 
 ### Application Demo Link ###
 
+You can download and test the application "debug" version in the following address.
+
 [HockeyAppLink - Demo Version
 ](https://rink.hockeyapp.net/apps/e1b1aa793e7241488c2d586d8e4778f0/)
+
+
+Note: All crashes that may occur are monitored by this SDK.
+
+Note2: This SDK will download the application from the specified link, then upload the new version to the site and send it to the user for automatic update informing.
+
 
 ### Web Services ###
 
@@ -182,7 +197,19 @@ Example Response:
 ]
 ```
 
+### Test Case  ###
+ 
+ * SendNewPostTest
+ * ShowPostListTest
 
+Note: Run tests on the actual android device (android version> = 5.0). 
+    Android Device Version >= 5.0  (Since it has a DataBinding structure.)
+
+### Version Control  ###
+
+Application source codes are kept on BitBucket and are developed with git.
+Commit history is available.
+Only **master** branch is working.
 
 ###  Android Interview Question  ### 
 Create a simple android app that will post some json data to https://jsonplaceholder.typicode.com/ fetch it and display list of all posted items.
