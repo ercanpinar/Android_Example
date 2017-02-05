@@ -20,6 +20,13 @@
 
 Send a new post and was developed to display the post sent earlier.
 
+### Application Flow  ###
+
+The Splash Screen is displayed for 2 seconds to the user. Then the New Post Page opens. The user can send a new post from this page with the "SEND" Button: (Filling the Title and Body fields completely).
+
+From this page the user opens the page displaying the previously posted posts with "ALL POST" button. It automatically retrieves the POST list from the server when the page is opened.
+
+
 ### Screens ###
 
 Implementation occurs on three screens
