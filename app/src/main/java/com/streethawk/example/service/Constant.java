@@ -5,7 +5,7 @@ package com.streethawk.example.service;
  */
 
 /**
- * ******* Servis yapısının kullanacağı sabit veriler sayfası. *******
+ * ******* Data page for the Web service. *******
  */
 
 public class Constant {

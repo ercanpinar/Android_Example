@@ -5,7 +5,7 @@ package com.streethawk.example.util;
  */
 
 /**
- * ****** Uygulama genelinde kullanacak sabit veriler sayfası *******
+ * ****** Data page for the Application. *******
  */
 
 public class Constant {

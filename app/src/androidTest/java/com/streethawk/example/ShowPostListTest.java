@@ -18,7 +18,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 /**
  * ShowPostListTest , which will execute on an Android device.
  *
- * Device Android Version >= 5.0  (Since it has a DataBinding structure.)
+ * Android Device Version >= 5.0  (Since it has a DataBinding structure.)
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
