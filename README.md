@@ -132,7 +132,7 @@ JSON service.
 
   ** https://jsonplaceholder.typicode.com/posts**
 
-Example:
+Example Request:
 
 ```
 #!json
@@ -142,6 +142,14 @@ Example:
   }
 ```
 
+Example Response:
+
+```
+#!json
+{
+    "id": 101
+  }
+```
 
 
 
@@ -152,7 +160,7 @@ Example:
 
   ** https://jsonplaceholder.typicode.com/posts**
 
-Example:
+Example Response:
 
 
 ```
