@@ -117,8 +117,16 @@ testCompile 'junit:junit:4.12'
 
 ### Application Demo Link ###
 
+You can download and test the application "debug" version in the following address.
+
 [HockeyAppLink - Demo Version
 ](https://rink.hockeyapp.net/apps/e1b1aa793e7241488c2d586d8e4778f0/)
+
+
+Note: All crashes that may occur are monitored by this SDK.
+
+Note2: This SDK will download the application from the specified link, then upload the new version to the site and send it to the user for automatic update informing.
+
 
 ### Web Services ###
 
