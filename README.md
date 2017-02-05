@@ -203,7 +203,7 @@ Example Response:
  * ShowPostListTest
 
 Note: Run tests on the actual android device (android version> = 5.0). 
-    Device Android Version >= 5.0  (Since it has a DataBinding structure.)
+    Android Device Version >= 5.0  (Since it has a DataBinding structure.)
 
 ### Version Control  ###
 
