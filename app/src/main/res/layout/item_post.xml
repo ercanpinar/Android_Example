@@ -41,7 +41,7 @@
         android:layout_height="20dp"
         android:background="@color/white" />
 
-    <!-- Post Item Title and Body Value LinearLayout -->
+    <!-- Post Item Body TextView -->
 
     <LinearLayout
         android:layout_width="0dp"
@@ -50,7 +50,7 @@
         android:layout_weight="4"
         android:paddingLeft="10dp"
         android:gravity="center">
-        <!-- Post Item Title Value TextView -->
+        <!-- Post Item Title TextView -->
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="match_parent"
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/white" />
-        <!-- Post Item Body Value TextView -->
+        <!-- Post Item Body TextView -->
         <TextView
             android:id="@+id/textViewBody"
             android:layout_width="match_parent"

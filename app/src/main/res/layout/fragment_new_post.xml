@@ -28,7 +28,7 @@
                 android:textColor="@color/white"
                 android:layout_marginBottom="20dp" />
 
-            <!-- New Post Title Edittext -->
+
             <com.andreabaccega.widget.FormEditText
                 whatever:testType="alpha"
                 android:id="@+id/formEditTextTitle"
@@ -42,7 +42,6 @@
                 android:textColor="@color/input_post"
                 android:textColorHint="@color/input_post_hint" />
 
-            <!-- New Post Body Edittext -->
             <com.andreabaccega.widget.FormEditText
                 whatever:testType="alpha"
                 android:id="@+id/formEditTextBody"
@@ -69,6 +68,7 @@
                 android:textColor="@color/white" />
 
             <!-- Show All Post Button -->
+
             <Button
                 android:id="@+id/buttonShowAllRecord"
                 android:layout_width="fill_parent"
