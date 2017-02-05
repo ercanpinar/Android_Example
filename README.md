@@ -190,6 +190,12 @@ Example Response:
 Note: Run tests on the actual android device (android version> = 5.0). 
     Device Android Version >= 5.0  (Since it has a DataBinding structure.)
 
+### Version Control  ###
+
+Application source codes are kept on BitBucket and are developed with git.
+Commit history is available.
+Only **master** branch is working.
+
 ###  Android Interview Question  ### 
 Create a simple android app that will post some json data to https://jsonplaceholder.typicode.com/ fetch it and display list of all posted items.
 
