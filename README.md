@@ -1,4 +1,4 @@
-# Street Hawk Example Project #
+# Send News Example Project #
 
 ### Application Icon and Name  ###
 
