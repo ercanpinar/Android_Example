@@ -2,7 +2,7 @@
 
 ### Application Icon and Name  ###
 
-![ic_launcher.png](https://bitbucket.org/repo/4xpday/images/681013801-ic_launcher.png) **SH Post**
+![ic_launcher.png](https://bitbucket.org/repo/4xpday/images/681013801-ic_launcher.png) **Send News**
 
 ### Application Version ###
 
