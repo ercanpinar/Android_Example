@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">SH Post</string>
+    <string name="app_name">Send News</string>
     <string name="post_title">Title : </string>
     <string name="post_body_title">Body : </string>
-    <string name="splash_text">StreetHawk</string>
+    <string name="splash_text">NEWS</string>
     <string name="loading">Loading</string>
     <string name="error_internet_connection">Internet connection problem.</string>
     <string name="message_internet_connection">Please check internet connection.</string>
