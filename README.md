@@ -211,11 +211,3 @@ Application source codes are kept on BitBucket and are developed with git.
 Commit history is available.
 Only **master** branch is working.
 
-###  Android Interview Question  ### 
-Create a simple android app that will post some json data to https://jsonplaceholder.typicode.com/ fetch it and display list of all posted items.
-
-Please make sure unittests are included.
-
-Extra creds: make the networking logic a standalone library
-
-Submissions will be evaluated according to code quality, documentation, design and completeness of unit tests. Code must build, run and give correct output.
